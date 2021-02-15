@@ -1,17 +1,21 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <br>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
+  <ion-toolbar background color = "navy">
+    <ion-segment>
+      <ion-segment-button  *ngFor="let name of ['All Jobs', 'Assigned', 'UnAssigned']"
+        (ionSelect)="segmentChosen(name)">
+        <ion-label> {{ name }} </ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content overflow-scroll="true" [fullscreen]="true">
+  <ion-comp1 *ngIf="selectedSegment === 'All Jobs'"></ion-comp1>
+  <ion-comp2 *ngIf="selectedSegment === 'Assigned'"></ion-comp2>
 </ion-content>
+
+

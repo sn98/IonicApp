@@ -1,0 +1,21 @@
+<div class="container">
+  <h4>All Jobs</h4>
+  <ion-list>
+    <div>
+      <list-item *ngFor="let item of dumjob">
+        <ion-card>
+          <ion-item>
+            <ion-card-title>Job: {{ item.jobid }}</ion-card-title>
+          </ion-item>
+          <ion-card-content>
+            <p>Customer     : {{item.customer}}</p>
+            <p>Job Type     : {{item.jobtype}} </p>
+            <p>Instructions : {{item.instructions}}</p>
+          </ion-card-content>
+        </ion-card>
+      </list-item>
+    </div>
+  </ion-list>
+
+</div>
+

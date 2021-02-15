@@ -1,0 +1,23 @@
+<div class="container" overflow="scroll">
+  <h4>Assigned Jobs</h4>
+  <ion-content>
+    <ion-list>
+      <div>
+        <list-item *ngFor="let item of dumjob">
+          <ion-card *ngIf="item.jobtype == 'Food Delivery'">
+            <ion-item>
+              <ion-card-title>Job: {{ item.jobid }}</ion-card-title>
+            </ion-item>
+            <ion-card-content>
+              <p>Customer     : {{item.customer}}</p>
+              <p>Job Type     : {{item.jobtype}} </p>
+              <p>Instructions : {{item.instructions}}</p>
+            </ion-card-content>
+          </ion-card>
+        </list-item>
+      </div>
+    </ion-list>
+
+  </ion-content>
+
+</div>
